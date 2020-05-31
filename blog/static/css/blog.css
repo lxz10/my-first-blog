@@ -1,5 +1,5 @@
 .page-header {
-    background-color: rgb(206, 168, 100);
+    background-color: rgb(95, 203, 230);
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -8,15 +8,23 @@
    color: #ffffff; 
     font-size: 36pt;
     text-decoration: none;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    
 }
 
 .content {
     margin-left: 40px;
+    margin-right: 40px;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: Hack, monospace;
     text-align: center;
+    margin-left: 70px;
+    margin-right: 70px;
+    
 }
 
 .date {
@@ -46,9 +54,70 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-.more {
-    float: right;
+.carousel-inner {
+    display: flex;
+    justify-content: center; 
 }
+
+.btn-group {
+  float: left;
+    
+}
+
+/* Button from https://codepen.io/grohit/pen/zYxMOjR */
+
+
+.morebutton {
+    font-family: Hack, monospace;
+    background: #0F0F6D;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 1.5rem;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    width: auto;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.morebutton:after {
+        content: "\f054";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 400;
+        position: absolute;
+        left: 85%;
+        top: 31%;
+        right: 5%;
+        bottom: 0;
+        opacity: 0;
+
+    }
+
+.morebutton:hover {
+       background: #2b2bff;
+        transition: all 0.5s;
+        border-radius: 10px;
+        box-shadow: 0px 6px 15px #0000ff61;
+        padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+
+    }
+
+
+.btn-group {
+    
+}
+
+
+.center-block {
+    width: 1100px;
+    margin-top: 20px;
+    display: flex; 
+}
+
 
 .item img {
     width: 100%;
@@ -56,9 +125,8 @@ h1, h2, h3, h4 {
     object-fit: cover;
 }
 
-.carousel-inner {
-    width: 100%;
-}
+
+
 
 
 
