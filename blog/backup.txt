@@ -1,0 +1,37 @@
+<!--<div class="container">
+    <div class="center-block">
+   <h4><p id="intro">Welcome to my blog on all things Computer Science.</p></h4> 
+   <div class="btn-group">
+   <button type="button" class="morebutton" id="more" onClick="showMore()" class="more btn btn-primary">Tell me more</button> 
+   </div>      
+       <script>
+             var clicks = 0;
+             function reset() {
+                 document.getElementById("intro").innerHTML = "Welcome to my blog, where I discuss Computer Science topics.";
+                 document.getElementById("more").textContent = "Tell me more!";
+             }
+             function showMore() {
+                 clicks++;
+                 if (clicks == 1) {
+                     document.getElementById("intro").innerHTML = "I'll be sharing my opinions on technology trends.                       ";                   
+                 } else if (clicks == 2) {
+                     document.getElementById("intro").innerHTML = "You can see all featured posts below!                                    "
+                     document.getElementById("more").textContent = "Got it!"
+                     clicks=-1;
+                 } else {
+                    reset();
+                 }
+             }
+         </script>
+         </div>
+     </div> -->
+
+<!--    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %} -->

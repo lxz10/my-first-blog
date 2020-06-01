@@ -3,33 +3,7 @@
 {% load staticfiles %}
 
 {% block content %}
-   <div class="container">
-       <div class="center-block">
-      <h4><p id="intro">Welcome to my blog on all things Computer Science.</p></h4> 
-      <div class="btn-group">
-      <button type="button" class="morebutton" id="more" onClick="showMore()" class="more btn btn-primary">Tell me more</button> 
-      </div>      
-          <script>
-                var clicks = 0;
-                function reset() {
-                    document.getElementById("intro").innerHTML = "Welcome to my blog, where I discuss Computer Science topics.";
-                    document.getElementById("more").textContent = "Tell me more!";
-                }
-                function showMore() {
-                    clicks++;
-                    if (clicks == 1) {
-                        document.getElementById("intro").innerHTML = "I'll be sharing my opinions on technology trends.                       ";                   
-                    } else if (clicks == 2) {
-                        document.getElementById("intro").innerHTML = "You can see all featured posts below!                                    "
-                        document.getElementById("more").textContent = "Got it!"
-                        clicks=-1;
-                    } else {
-                       reset();
-                    }
-                }
-            </script>
-            </div>
-        </div>
+   
     <!-- Carousel adapted from https://stackoverflow.com/questions/30119351/how-to-make-an-object-slider-in-django -->
     <div class="container">
     <div class="center-block">
@@ -39,25 +13,24 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
         </ol>
         
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             {% for post in posts %}
+            {% if post.featured is True %}
             {% if forloop.counter == 1 %}
             <div class="item active">
             {% else %}
             <div class="item">
             {% endif %}
-                <img src="{% static 'images/virtualreality.jpg'%}" alt="Image" class="responsive">
+                <img src="{{ post.image.url }}" enctype="multipart/form-data" alt="Image" class="responsive">
           <div class="carousel-caption">
             <h3>{{ post.title }}</h3>
             <p>published: {{ post.published_date }}</p>
           </div>
             </div>
+            {% endif %}
             {% endfor %}
             </div>
         
@@ -74,14 +47,5 @@
     </div>
 </div>
 
-<!--    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                <p>published: {{ post.published_date }}</p>
-            </div>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
-    {% endfor %} -->
 
 {% endblock %}
