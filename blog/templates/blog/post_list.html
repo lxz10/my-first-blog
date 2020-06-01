@@ -8,7 +8,6 @@
       <h4><p id="intro">Welcome to my blog on all things Computer Science.</p></h4> 
       <div class="btn-group">
       <button type="button" class="morebutton" id="more" onClick="showMore()" class="more btn btn-primary">Tell me more</button> 
-      <button type="button" class="morebutton">All Blog Posts</button>
       </div>      
           <script>
                 var clicks = 0;
@@ -19,9 +18,9 @@
                 function showMore() {
                     clicks++;
                     if (clicks == 1) {
-                        document.getElementById("intro").innerHTML = "I'll be sharing my opinions on technology trends.";                   
+                        document.getElementById("intro").innerHTML = "I'll be sharing my opinions on technology trends.                       ";                   
                     } else if (clicks == 2) {
-                        document.getElementById("intro").innerHTML = "You can see all featured posts below!"
+                        document.getElementById("intro").innerHTML = "You can see all featured posts below!                                    "
                         document.getElementById("more").textContent = "Got it!"
                         clicks=-1;
                     } else {

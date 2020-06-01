@@ -5,7 +5,7 @@
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-   color: #ffffff; 
+    color: #ffffff; 
     font-size: 36pt;
     text-decoration: none;
     text-align: center;
@@ -69,6 +69,7 @@ h1, h2, h3, h4 {
 
 .morebutton {
     font-family: Hack, monospace;
+    position: relative;
     background: #0F0F6D;
     color: #ffffff;
     cursor: pointer;
@@ -78,14 +79,14 @@ h1, h2, h3, h4 {
     transition: all 0.5s;
     border-radius: 10px;
     width: auto;
-    position: relative;
     margin-right: 10px;
-    margin-left: 10px;
+    margin-left: 170px;
     display: inline-block;
 }
 
 .morebutton:after {
         content: "\f054";
+        position: fixed;
         font-family: "Font Awesome 5 Pro";
         font-weight: 400;
         position: absolute;
@@ -115,6 +116,8 @@ h1, h2, h3, h4 {
 .center-block {
     width: 1100px;
     margin-top: 20px;
+    margin-left: 70px;
+    margin-right: 70px;
     display: flex; 
 }
 
@@ -123,6 +126,33 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+i {
+    padding: 10px;
+    color: white;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+   }
+
+.footer {
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(95, 203, 230);
+    color: white;
+    text-align: center;
+    
+
 }
 
 
