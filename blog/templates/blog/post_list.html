@@ -1,11 +1,11 @@
 
-{% extends 'blog/base.html' %}
+{% extends 'blog/menubase.html' %}
 {% load staticfiles %}
 
 {% block content %}
    
     <!-- Carousel adapted from https://stackoverflow.com/questions/30119351/how-to-make-an-object-slider-in-django -->
-    <div class="container">
+    <div class="container" id="featured">
     <div class="center-block">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -45,6 +45,7 @@
             </a>
         </div>
     </div>
+</div>
 </div>
 
 

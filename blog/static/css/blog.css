@@ -16,6 +16,19 @@
     
 }
 
+.navbar-fixed {
+    width: 20%;
+    padding: 0px;
+}
+
+.nav-pills {
+    width: 15%;
+}
+
+.body {
+    position: relative;
+}
+
 .content {
     margin-left: 40px;
     margin-right: 40px;
@@ -121,7 +134,7 @@ h1, h2, h3, h4 {
     margin-top: 8px;
     margin-left: 230px;
     margin-right: 100px;
-    margin-bottom: 500px;
+    margin-bottom: 200px;
     display: flex; 
 }
 
