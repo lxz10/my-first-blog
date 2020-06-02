@@ -1,5 +1,5 @@
 .page-header {
-    background-color: rgb(95, 203, 230);
+    background-color:  rgb(95, 203, 230);
     margin-top: 0;
     padding: 20px 20px 20px 40px;
     width: 100%;
@@ -13,17 +13,50 @@
     text-align: center;
     margin-left: 40px;
     margin-right: 40px;
+    padding-bottom: 25px;
     
 }
 
-.navbar-fixed {
-    width: 20%;
-    padding: 0px;
+
+.fas  {
+    float: left;
 }
 
-.nav-pills {
-    width: 15%;
-}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    opacity: 0.85;
+    top: 0;
+    left: 0;
+    background-color: rgb(17, 91, 110);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 20px 8px 20px 50px; /* 8 8 8 32 */
+    text-decoration: none;
+    font-size: 25px;
+    font-family: Hack, monospace;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: rgb(95, 203, 230);
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }s
 
 .body {
     position: relative;
@@ -61,6 +94,8 @@ h1, h2, h3, h4 {
     font-size: 26pt;
     margin-right: 20px;
 }
+
+
 
 .post {
     margin-bottom: 70px;
@@ -131,7 +166,7 @@ h1, h2, h3, h4 {
 
 .center-block {
     width: 900px;
-    margin-top: 8px;
+    margin-top: 5px;
     margin-left: 230px;
     margin-right: 100px;
     margin-bottom: 200px;
@@ -165,7 +200,7 @@ i {
 
 .footer {
     position: fixed;
-    z-index: 100000;
+    z-index: 100;
     left: 0;
     bottom: 0;
     width: 100%;
