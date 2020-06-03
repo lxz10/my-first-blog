@@ -61,6 +61,22 @@
         </div>
     </div>
 </div>
-
+<div class="container-post" id="posts">
+<div class="well" >
+    <h3>All Posts</h3>
+</div>
+<div class="container-box" >
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <img src="{{ post.image.url }}" enctype="multipart/form-data" alt="Image" class="responsive">
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+</div>
+</div>
 
 {% endblock %}
