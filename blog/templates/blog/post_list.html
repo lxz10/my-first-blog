@@ -24,9 +24,9 @@
             {% else %}
             <div class="item">
             {% endif %}
-                <img src="{{ post.image.url }}" enctype="multipart/form-data" alt="Image" class="responsive">
+            <a href="{% url 'post_detail' pk=post.pk %}"><img src="{{ post.image.url }}" enctype="multipart/form-data" alt="Image" class="responsive"></a>
           <div class="carousel-caption">
-            <h3>{{ post.title }}</h3>
+            <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
             <p>published: {{ post.published_date }}</p>
           </div>
             </div>
@@ -46,6 +46,20 @@
         </div>
     </div>
 </div>
+</div>
+<div class="well">
+       <h3>Featured Posts</h3>
+</div>
+<div class="container-fluid" id="about">
+    <div class="panel panel-default">
+    <div class="header"><div class="panel-heading"><h3>Hello, I'm Lauren</h3></div></div>
+        <div class="panel-body">
+            <div class="profile" >
+                <img src="static/media/images/profile.jpg" alt="Profile">
+                <p>Welcome to my blog! I’ll be sharing my thoughts on all the latest technology news and trends and giving my opinions. I just finished my second year studying Computer Science at the University of Birmingham on the PwC technology degree apprenticeship. I’m passionate about improving diversity and inclusion in the technology industry and empowering young people through tech opportunities. Outside of tech, I’m into art and reading, as well as being part of a steel pan orchestra!</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 
