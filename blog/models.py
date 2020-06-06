@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from next_prev import next_in_order, prev_in_order
 
 
 class Post(models.Model):
@@ -11,6 +12,7 @@ class Post(models.Model):
     featured = models.BooleanField(default=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+
 
     def publish(self):
         self.published_date = timezone.now()
