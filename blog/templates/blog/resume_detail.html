@@ -1,0 +1,79 @@
+
+{% extends 'blog/noheaderbase.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+</div>
+<div class="container-fluid" id="cv">
+    <div class="well">
+        <h3>CV</h3>
+    </div>
+    {% for resume in resumes %}
+    <h3>{{ resume.name }}</h3>
+    <p>{{ resume.job_title }}</p>
+    <p>{{ resume.email }}</p>
+    <p>{{ resume.linkedIn }}</p>
+    <p>{{ resume.headline }}</p>
+    <p>{{ resume.technical_skills }}</p>
+    <h2>Education</h2>
+    {% for education in resume.education_experience.all %}
+    <p>{{ education.name }}</p>
+    <p>{{ education.start_date }}</p>
+    <p>{{ education.end_date }}</p>
+    <p>{{ education.location }}</p>
+    <p>{{ education.role }}</p>
+    <p>{{ education.description }}</p>
+    {% endfor %}
+    <h2>Technology Experience</h2>
+    {% for tech in resume.technology_experience.all %}
+    <p>{{ tech.name }}</p>
+    <p>{{ tech.start_date }}</p>
+    <p>{{ tech.end_date }}</p>
+    <p>{{ tech.location }}</p>
+    <p>{{ tech.role }}</p>
+    <p>{{ tech.description }}</p>
+    {% endfor %}
+    <h2>Other Experience</h2>
+    {% for other in resume.other_work_experience.all %}
+    <p>{{ other.name }}</p>
+    <p>{{ other.start_date }}</p>
+    <p>{{ other.end_date }}</p>
+    <p>{{ other.location }}</p>
+    <p>{{ other.role }}</p>
+    <p>{{ other.description }}</p>
+    {% endfor %}
+    <p>{{ resume.other_work_experience }}</p>
+    <h2>Volunteering Work</h2>
+    {% for volunteer in resume.volunteering_experience.all %}
+    <p>{{ volunteer.name }}</p>
+    <p>{{ volunteer.start_date }}</p>
+    <p>{{ volunteer.end_date }}</p>
+    <p>{{ volunteer.location }}</p>
+    <p>{{ volunteer.role }}</p>
+    <p>{{ volunteer.description }}</p>
+    {% endfor %}
+    <h2>Extracurricular Activities</h2>
+    {% for extra in resume.extracurriculars.all %}
+    <p>{{ extra.name }}</p>
+    <p>{{ extra.start_date }}</p>
+    <p>{{ extra.end_date }}</p>
+    <p>{{ extra.location }}</p>
+    <p>{{ extra.role }}</p>
+    <p>{{ extra.description }}</p>
+    {% endfor %}
+    <h2>Achievements</h2>
+    {% for achievement in resume.notable_achievements.all %}
+    <p>{{ achievement.name }}</p>
+    <p>{{ achievement.start_date }}</p>
+    <p>{{ achievement.end_date }}</p>
+    <p>{{ achievement.location }}</p>
+    <p>{{ achievement.role }}</p>
+    <p>{{ achievement.description }}</p>
+    {% endfor %}
+    <h2>References</h2>
+    <p>{{ resume.references }}</p> 
+    {% endfor %}
+</div>
+
+{% endblock %}

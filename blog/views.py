@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, Resume
 from django.utils import timezone
 from blog.forms import PostForm
 from django.shortcuts import redirect
-#from .forms import PostForm
 
 
 # Create your views here.
@@ -42,3 +41,7 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def resume_detail(request):
+    resumes = Resume.objects.filter(name__lte="Lauren Alie")
+    return render(request, 'blog/resume_detail.html', {'resumes': resumes})

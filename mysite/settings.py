@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    'django_webdriver',
+    'django_nose',
 ]
 
 MIDDLEWARE = [
@@ -126,5 +128,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = (
     os.path.join(BASE_DIR, 'blog/static/media')
 )
+
+SELENIUM_WEBDRIVER = 'C:/Users/laure/bin/chromedriver.exe'
 
 
