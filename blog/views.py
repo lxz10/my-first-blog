@@ -42,8 +42,8 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-def resume_detail(request):
-    resumes = Resume.objects.filter(name__lte="Lauren Alie")
+def resume_detail(request, pk):
+    resumes = Resume.objects.filter(name__lte='Lauren Alie')
     return render(request, 'blog/resume_detail.html', {'resumes': resumes})
 
 def resume_edit(request, pk):

@@ -1,6 +1,7 @@
 
 {% extends 'blog/resumebase.html' %}
 {% load staticfiles %}
+{% load markdown_file %}
 
 {% block content %}
 
@@ -9,70 +10,73 @@
     <div class="top-menu">
         <a href="{% url 'resume_edit' pk=resume.pk %}"><i class="fa fa-pencil-square-o"></i></a>
     </div>
+    <div class="resume-main">
         <h1>{{ resume.name }}</h1>
-        <p>{{ resume.job_title }}</p>
-        <p>{{ resume.email }}</p>
-        <p>{{ resume.linkedIn }}</p>
-        <p>{{ resume.headline }}</p>
-        <p>{{ resume.technical_skills }}</p>
+        <p>{{ resume.job_title | markdown | safe  }}</p>
+        <p>{{ resume.email | markdown | safe }}</p>
+        <p>{{ resume.linkedIn | markdown | safe }}</p>
+        <p>{{ resume.headline | markdown | safe }}</p>
+        <p>{{ resume.technical_skills | markdown | safe }}</p>
+    </div>
+    <div class="resume-body">
         <h2>Education</h2>
         {% for education in resume.education_experience.all %}
-        <p>{{ education.name }}</p>
-        <p>{{ education.start_date }}</p>
-        <p>{{ education.end_date }}</p>
-        <p>{{ education.location }}</p>
-        <p>{{ education.role }}</p>
-        <p>{{ education.description }}</p>
+        <p>{{ education.name | markdown | safe }}</p>
+        <p>{{ education.location | markdown | safe }}</p>
+        <p>{{ education.start_date | markdown | safe }}</p>
+        <p>{{ education.end_date | markdown | safe }}</p>
+        <p>{{ education.role | markdown | safe }}</p>
+        <p>{{ education.description | markdown | safe }}</p>
         {% endfor %}
         <h2>Technology Experience</h2>
         {% for tech in resume.technology_experience.all %}
-        <p>{{ tech.name }}</p>
-        <p>{{ tech.start_date }}</p>
-        <p>{{ tech.end_date }}</p>
-        <p>{{ tech.location }}</p>
-        <p>{{ tech.role }}</p>
-        <p>{{ tech.description }}</p>
+        <p>{{ tech.name | markdown | safe  }}</p>
+        <p>{{ tech.location | markdown | safe }}</p>
+        <p>{{ tech.start_date | markdown | safe }}</p>
+        <p>{{ tech.end_date | markdown | safe }}</p>
+        <p>{{ tech.role | markdown | safe }}</p>
+        <p>{{ tech.description| markdown | safe  }}</p>
         {% endfor %}
         <h2>Other Experience</h2>
         {% for other in resume.other_work_experience.all %}
-        <p>{{ other.name }}</p>
-        <p>{{ other.start_date }}</p>
-        <p>{{ other.end_date }}</p>
-        <p>{{ other.location }}</p>
-        <p>{{ other.role }}</p>
-        <p>{{ other.description }}</p>
+        <p>{{ other.name | markdown | safe }}</p>
+        <p>{{ other.location | markdown | safe }}</p>
+        <p>{{ other.start_date | markdown | safe }}</p>
+        <p>{{ other.end_date | markdown | safe }}</p>
+        <p>{{ other.role | markdown | safe }}</p>
+        <p>{{ other.description | markdown | safe }}</p>
         {% endfor %}
-        <p>{{ resume.other_work_experience }}</p>
         <h2>Volunteering Work</h2>
         {% for volunteer in resume.volunteering_experience.all %}
-        <p>{{ volunteer.name }}</p>
-        <p>{{ volunteer.start_date }}</p>
-        <p>{{ volunteer.end_date }}</p>
-        <p>{{ volunteer.location }}</p>
-        <p>{{ volunteer.role }}</p>
-        <p>{{ volunteer.description }}</p>
+        <p>{{ volunteer.name | markdown | safe }}</p>
+        <p>{{ volunteer.location | markdown | safe }}</p>
+        <p>{{ volunteer.start_date | markdown | safe }}</p>
+        <p>{{ volunteer.end_date | markdown | safe }}</p>
+        <p>{{ volunteer.role | markdown | safe }}</p>
+        <p>{{ volunteer.description | markdown | safe }}</p>
         {% endfor %}
         <h2>Extracurricular Activities</h2>
         {% for extra in resume.extracurriculars.all %}
-        <p>{{ extra.name }}</p>
-        <p>{{ extra.start_date }}</p>
-        <p>{{ extra.end_date }}</p>
-        <p>{{ extra.location }}</p>
-        <p>{{ extra.role }}</p>
-        <p>{{ extra.description }}</p>
+        <p>{{ extra.name | markdown | safe }}</p>
+        <p>{{ extra.location | markdown | safe  }}</p>
+        <p>{{ extra.start_date | markdown | safe }}</p>
+        <p>{{ extra.end_date | markdown | safe }}</p>
+        <p>{{ extra.role | markdown | safe }}</p>
+        <p>{{ extra.description | markdown | safe }}</p>
         {% endfor %}
         <h2>Achievements</h2>
         {% for achievement in resume.notable_achievements.all %}
-        <p>{{ achievement.name }}</p>
-        <p>{{ achievement.start_date }}</p>
-        <p>{{ achievement.end_date }}</p>
-        <p>{{ achievement.location }}</p>
-        <p>{{ achievement.role }}</p>
-        <p>{{ achievement.description }}</p>
+        <p>{{ achievement.name | markdown | safe }}</p>
+        <p>{{ achievement.location | markdown | safe }}</p>
+        <p>{{ achievement.start_date | markdown | safe }}</p>
+        <p>{{ achievement.end_date | markdown | safe }}</p>
+        <p>{{ achievement.role | markdown | safe }}</p>
+        <p>{{ achievement.description | markdown | safe }}</p>
         {% endfor %}
         <h2>References</h2>
-        <p>{{ resume.references }}</p> 
+        <p>{{ resume.references | markdown | safe }}</p> 
         {% endfor %}
+    </div>
 </div>
 
 {% endblock %}

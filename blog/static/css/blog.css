@@ -257,7 +257,7 @@ h1, h2, h3, h4 {
     color: black;
     font-family: Hack, monospace;
 
-}
+} 
 
 .text-box {
     background-color: white;
@@ -266,12 +266,28 @@ h1, h2, h3, h4 {
     margin-left: 20px;
 }
 
+.text-box h1, .text-box h2, .text-box h3, .text-box h4, .resume-box h1, .resume-box h2, .resume-box h3, .resume-box h4 {
+    color: black;
+}
+
 .resume-box {
     background-color: white;
     padding: 8px 8px 20px 20px;
     width: 120%;
     margin: 0 auto auto 30%;
+    font-family: Hack, monospace;
 }
+
+.resume-main {
+    text-align: left
+}
+
+.resume-body, .resume-main h1, .resume-main h4, .resume-body h1, .resume-body h2, .resume-body h3, .resume-body h4 {
+    text-align: left;
+    margin-left: 0
+}
+
+
 
 .resume-box .fa {
     color: black;
@@ -281,6 +297,8 @@ h1, h2, h3, h4 {
     color: black;
     font-family: Hack, monospace;
 }
+
+
 
 .container-box {
     display: inline-block;
@@ -308,6 +326,10 @@ h1, h2, h3, h4 {
     height: auto;
 }
 
+.date-image img {
+    max-width: 900%;
+    height: auto;
+}
 
 
 .item {

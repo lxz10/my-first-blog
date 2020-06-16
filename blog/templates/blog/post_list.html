@@ -1,6 +1,7 @@
 
 {% extends 'blog/menubase.html' %}
 {% load staticfiles %}
+{% load markdown_file %}
 
 {% block content %}
    
@@ -73,7 +74,7 @@
             </div>
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <img src="{{ post.image.url }}" enctype="multipart/form-data" alt="Image" class="responsive">
-            <p>{{ post.text|linebreaksbr }}</p>
+            <p>{{ post.text | markdown | safe }}</p>
         </div>
     {% endfor %}
 </div>

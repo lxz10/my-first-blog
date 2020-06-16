@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from next_prev import next_in_order, prev_in_order
+from tinymce.models import HTMLField
 
 full_name = "Lauren Alie"
 my_uni = "University of Birmingham"
@@ -50,8 +51,8 @@ class Experience(models.Model):
     start_date = models.DateField(default=None)
     end_date = models.DateField(blank=True, default=None)
     location = models.CharField(max_length=200, default='')
-    role = models.CharField(max_length=200, blank=True, default='')
-    description = models.TextField(default='')
+    role = models.CharField(max_length=200, default='', blank=True)
+    description = models.TextField()
     def __str__(self):
         return self.name
 
@@ -60,7 +61,7 @@ class Resume(models.Model):
     name = models.CharField(max_length=200, default=full_name)
     job_title = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
-    linkedIn = models.URLField(blank=True)
+    linkedIn = models.CharField(max_length=250, blank=True)
     headline = models.TextField(blank=True, 
                 help_text="Write a few sentences to describe where you are in your career and what you stand for.")
     technical_skills = models.TextField(help_text="Programming languages and technical tools you're competent with.")
