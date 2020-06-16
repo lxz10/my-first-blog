@@ -17,14 +17,11 @@
         <script src="js/bootstrap.js"></script>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
-            <span onclick="openNav()" ><i class="fas fa-ellipsis-v"></i></span>
+        <span onclick="openNav()" ><i class="fas fa-ellipsis-v"></i></span>
+        <div class="page-header" id="home">
             <a href="{% url 'post_list' %}" class="top-menu"><i class="fa fa-home"></i></a>
-            {% if user.is_authenticated %}
-            {% url 'post_new' as new_view %}
-                {% if request.path != new_view %}
-                <a href="{% url 'post_new' %}" class="top-menu"><i class="far fa-file-alt"></i></a>
-                {% endif %}
-            {% endif %}         
+            <h1>CV</h1>            
+        </div>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="{% url 'post_list' %}">Home</a>

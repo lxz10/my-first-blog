@@ -1,0 +1,10 @@
+
+{% extends 'blog/noheaderbase.html' %}
+
+{% block content %}
+    <h2>New Resume</h2>
+    <form method="POST" class="post-form" id="newresume" enctype="multipart/form-data">{% csrf_token %}
+        {{ resume_form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

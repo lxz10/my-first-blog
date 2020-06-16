@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'django_webdriver',
     'django_nose',
+
 ]
 
 MIDDLEWARE = [

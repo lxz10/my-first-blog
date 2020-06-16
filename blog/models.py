@@ -46,7 +46,7 @@ class Post(models.Model):
 
 
 class Experience(models.Model):
-    name = models.CharField(max_length=200, default='')
+    name = models.CharField(max_length=200, default='', )
     start_date = models.DateField(default=None)
     end_date = models.DateField(blank=True, default=None)
     location = models.CharField(max_length=200, default='')
@@ -65,11 +65,11 @@ class Resume(models.Model):
                 help_text="Write a few sentences to describe where you are in your career and what you stand for.")
     technical_skills = models.TextField(help_text="Programming languages and technical tools you're competent with.")
     education_experience = models.ManyToManyField(Experience, related_name="employee_education", default=DEFAULT_ID)
-    technology_experience = models.ManyToManyField(Experience, help_text="Any work experience in the tech industry.", related_name="employee_technology_experience", default=DEFAULT_ID)
+    technology_experience = models.ManyToManyField(Experience, related_name="employee_technology_experience", default=DEFAULT_ID)
     other_work_experience = models.ManyToManyField(Experience, related_name="employee_other_experience", default=DEFAULT_ID)
     volunteering_experience = models.ManyToManyField(Experience, related_name="employee_volunteering_experience", default=DEFAULT_ID)
     extracurriculars = models.ManyToManyField(Experience, related_name="employee_extracurriculars", default=DEFAULT_ID)
-    notable_achievements = models.ManyToManyField(Experience, help_text="This can include hackathon participation, online courses and certifications.", related_name="employee_achievements", blank=True, default=DEFAULT_ID)
+    notable_achievements = models.ManyToManyField(Experience, help_text="Includes hackathon participation, online courses and certifications.", related_name="employee_achievements", blank=True, default=DEFAULT_ID)
     references = models.TextField(blank=True)
     last_updated_date = models.DateTimeField()
 

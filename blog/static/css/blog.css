@@ -232,6 +232,8 @@ h1, h2, h3, h4 {
     width: 70%; 
 }
 
+
+
 .container-post {
     padding-top: 30px;
 }
@@ -262,6 +264,22 @@ h1, h2, h3, h4 {
     padding: 8px 8px 8px 8px;
     border-radius: 10px;
     margin-left: 20px;
+}
+
+.resume-box {
+    background-color: white;
+    padding: 8px 8px 20px 20px;
+    width: 120%;
+    margin: 0 auto auto 30%;
+}
+
+.resume-box .fa {
+    color: black;
+}
+
+.resume-box h1, .resume-box h2 {
+    color: black;
+    font-family: Hack, monospace;
 }
 
 .container-box {
@@ -331,6 +349,10 @@ i {
     text-align: center;
     
 
+}
+
+.resume p {
+    color: white;
 }
 
 
