@@ -130,6 +130,10 @@ h1, h2, h3, h4 {
 
 }
 
+.post a {
+    color: rgb(136, 200, 255);
+}
+
 .post h2 a, .post h2 a:visited {
     color: white;
     text-align: left;
@@ -255,9 +259,13 @@ h1, h2, h3, h4 {
 
 .full-post p {
     color: black;
-    font-family: Hack, monospace;
 
 } 
+
+#comment {
+    background-color:  rgb(136, 200, 255);
+    font-family: Hack, monospace;
+}
 
 .text-box {
     background-color: white;
