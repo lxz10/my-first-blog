@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
    # 'django_webdriver',
-    'django_nose',
+   # 'django_nose',
     'tinymce',
 
 ]
