@@ -6,9 +6,22 @@
 <div class="full-post">
     <div class="post-text">      
         <h2>{{ post.title }}</h2>
+        <img src="{{ post.image.url }}" enctype="multipart/form-data" alt="Image" class="responsive">  
             <div class="text-box">
             <p>{{ post.text | markdown | safe }}</p>
             </div>
+            <div id="comment">
+                <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+            </div>
+            {% for comment in post.comments.all %}
+            <div class="comment">
+                <div class="date">{{ comment.created_date }}</div>
+                <strong>{{ comment.author }}</strong>
+                <p>{{ comment.text|linebreaks }}</p>
+            </div>
+        {% empty %}
+            <h4>No comments</h4>
+        {% endfor %}
     </div>
     <div class="date-image">
         {% if post.published_date %}
@@ -20,19 +33,7 @@
             <a href="{% url 'post_edit' pk=post.pk %}"><i class="fa fa-pencil-square-o"></i></a>
             <a href="{% url 'post_remove' pk=post.pk %}"><i class="fa fa-trash"></i></a>
         {% endif %}
-        <div id="comment">
-            <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
-        </div>
-        <img src="{{ post.image.url }}" enctype="multipart/form-data" alt="Image" class="responsive">  
-        {% for comment in post.comments.all %}
-        <div class="comment">
-            <div class="date">{{ comment.created_date }}</div>
-            <strong>{{ comment.author }}</strong>
-            <p>{{ comment.text|linebreaks }}</p>
-        </div>
-    {% empty %}
-        <p>No comments</p>
-    {% endfor %}
+        
     </div>  
 </div>
 

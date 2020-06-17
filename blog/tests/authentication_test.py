@@ -16,4 +16,9 @@ browser.get('http://127.0.0.1:8000')
 #User clicks pen (edit) icon to edit the post. The page updates to show the post_edit view where the user can change the title, text,
 #image or whether the post is featured.
 
+#User saves post and is redirected to the webpage showing the full post (post_detail view)
+
+#User decided to delete post so clicks on bin icon. User is then redirected to the homepage (post_list view)
+#The previously viewed post has been removed from the website
+
 browser.quit()

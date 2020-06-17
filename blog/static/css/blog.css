@@ -246,14 +246,25 @@ h1, h2, h3, h4 {
 .full-post {
     display: flex;
     justify-content: center;
-    color: white;
+    background-color: white;
+    padding: 8px 8px 20px 20px;
+    width: 100%;
+    margin: 5% auto auto auto;
 
+}
+
+.full-post h1, .full-post h2, .full-post h3, .full-post h4 {
+    color: black;
 }
 
 .date-image {
     margin-top: 20px;
     margin-left: 20px;
     width: 15%;
+}
+
+.date-image i {
+    color: black;
 }
 
 
@@ -263,7 +274,7 @@ h1, h2, h3, h4 {
 } 
 
 #comment {
-    background-color:  rgb(136, 200, 255);
+    float: right;  
     font-family: Hack, monospace;
 }
 
@@ -285,6 +296,8 @@ h1, h2, h3, h4 {
     margin: 0 auto auto 30%;
     font-family: Hack, monospace;
 }
+
+
 
 .resume-main {
     text-align: left
@@ -334,10 +347,13 @@ h1, h2, h3, h4 {
     height: auto;
 }
 
-.date-image img {
+.full-post img {
     margin-top: 20px;
-    max-width: 150%;
-    height: auto;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%;
 }
 
 
