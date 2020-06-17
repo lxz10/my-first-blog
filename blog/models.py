@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from next_prev import next_in_order, prev_in_order
+from tinymce.models import HTMLField
 
 full_name = "Lauren Alie"
 my_uni = "University of Birmingham"
