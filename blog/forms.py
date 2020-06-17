@@ -12,9 +12,6 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'text', 'image','featured',)
         ordering = ('created_date', 'title')
 
-    class Media:
-        js = ('/media/tinymce/jscripts/tiny_mce/tiny_mce.js',
-                '',)
 
 
 class ResumeForm(forms.ModelForm):
@@ -27,9 +24,7 @@ class ResumeForm(forms.ModelForm):
             'technology_experience', 'other_work_experience', 'volunteering_experience',
             'extracurriculars', 'notable_achievements',
                 'references')
-    class Media:
-        js = ('/media/tinymce/jscripts/tiny_mce/tiny_mce.js',
-                '',)
+
 
 class ExperienceForm(forms.ModelForm):
     
