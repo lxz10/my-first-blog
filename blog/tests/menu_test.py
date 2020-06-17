@@ -18,6 +18,8 @@ assert 'Lauren Alie\'s blog' in browser.title
 
 #User navigates to All Posts page then closes the menu
 
+#User navigates to About Me page then closes the menu
+
 #User navigates back to Home page then closes the menu
 
 #User wants to connect with blog creator on socia media.
