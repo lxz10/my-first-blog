@@ -42,6 +42,11 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('post_list')
+
 def resume_detail(request, pk):
     resumes = Resume.objects.filter(name__lte='Lauren Alie')
     return render(request, 'blog/resume_detail.html', {'resumes': resumes})
