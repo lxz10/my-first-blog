@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Post, Resume, Experience
+from .models import Post, Resume, Experience, Comment
 
 
 
@@ -36,3 +36,10 @@ class ExperienceForm(forms.ModelForm):
     class Meta:
         model = Experience
         fields = ('name', 'start_date', 'end_date','location','role', 'description')
+
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('author', 'text',)

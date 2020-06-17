@@ -75,8 +75,10 @@
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <img src="{{ post.image.url }}" enctype="multipart/form-data" alt="Image" class="responsive">
             <p>{{ post.text | markdown | safe }}</p>
+            <a href="{% url 'post_detail' pk=post.pk %}"><h3>Comments: {{ post.comments.count }}</h3></a>
         </div>
     {% endfor %}
 </div>
+
 
 {% endblock %}

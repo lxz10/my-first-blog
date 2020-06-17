@@ -327,7 +327,8 @@ h1, h2, h3, h4 {
 }
 
 .date-image img {
-    max-width: 900%;
+    margin-top: 20px;
+    max-width: 150%;
     height: auto;
 }
 
@@ -377,6 +378,13 @@ i {
     color: white;
 }
 
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+
+.comment strong, .comment p {
+    font-family: Hack, monospace;
+}
 
 
 

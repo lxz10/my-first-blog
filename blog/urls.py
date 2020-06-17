@@ -11,6 +11,7 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('resume/<int:pk>/', views.resume_detail, name="resume_detail"),
     path('resume/<int:pk>/edit/', views.resume_edit, name="resume_edit"),
+    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
