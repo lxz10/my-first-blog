@@ -17,7 +17,7 @@
         <script src="js/bootstrap.js"></script>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
-        <span onclick="openNav()" ><i class="fas fa-ellipsis-v"></i></span>
+        <span onclick="openNav()" ><div id="menu"></div><i class="fas fa-ellipsis-v"></i></div></span>
         <div class="page-header" id="home">
             {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><i class="far fa-file-alt"></i></a>

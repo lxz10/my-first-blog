@@ -1,6 +1,7 @@
 
 {% extends 'blog/resumebase.html' %}
 {% load staticfiles %}
+{% load sort_tag %}
 {% load markdown_file %}
 
 {% block content %}
@@ -20,7 +21,7 @@
     </div>
     <div class="resume-body">
         <h2>Education</h2>
-        {% for education in resume.education_experience.all %}
+        {% for education in resume.education_experience.all|sort_by:'-start_date' %}
         <p>{{ education.name | markdown | safe }}</p>
         <p>{{ education.location | markdown | safe }}</p>
         <p>{{ education.start_date | markdown | safe }}</p>
@@ -29,7 +30,7 @@
         <p>{{ education.description | markdown | safe }}</p>
         {% endfor %}
         <h2>Technology Experience</h2>
-        {% for tech in resume.technology_experience.all %}
+        {% for tech in resume.technology_experience.all|sort_by:'-start_date' %}
         <p>{{ tech.name | markdown | safe  }}</p>
         <p>{{ tech.location | markdown | safe }}</p>
         <p>{{ tech.start_date | markdown | safe }}</p>
@@ -38,7 +39,7 @@
         <p>{{ tech.description| markdown | safe  }}</p>
         {% endfor %}
         <h2>Other Experience</h2>
-        {% for other in resume.other_work_experience.all %}
+        {% for other in resume.other_work_experience.all|sort_by:'-start_date' %}
         <p>{{ other.name | markdown | safe }}</p>
         <p>{{ other.location | markdown | safe }}</p>
         <p>{{ other.start_date | markdown | safe }}</p>
@@ -47,7 +48,7 @@
         <p>{{ other.description | markdown | safe }}</p>
         {% endfor %}
         <h2>Volunteering Work</h2>
-        {% for volunteer in resume.volunteering_experience.all %}
+        {% for volunteer in resume.volunteering_experience.all|sort_by:'-start_date' %}
         <p>{{ volunteer.name | markdown | safe }}</p>
         <p>{{ volunteer.location | markdown | safe }}</p>
         <p>{{ volunteer.start_date | markdown | safe }}</p>
@@ -56,7 +57,7 @@
         <p>{{ volunteer.description | markdown | safe }}</p>
         {% endfor %}
         <h2>Extracurricular Activities</h2>
-        {% for extra in resume.extracurriculars.all %}
+        {% for extra in resume.extracurriculars.all|sort_by:'-start_date' %}
         <p>{{ extra.name | markdown | safe }}</p>
         <p>{{ extra.location | markdown | safe  }}</p>
         <p>{{ extra.start_date | markdown | safe }}</p>
@@ -65,7 +66,7 @@
         <p>{{ extra.description | markdown | safe }}</p>
         {% endfor %}
         <h2>Achievements</h2>
-        {% for achievement in resume.notable_achievements.all %}
+        {% for achievement in resume.notable_achievements.all|sort_by:'-start_date' %}
         <p>{{ achievement.name | markdown | safe }}</p>
         <p>{{ achievement.location | markdown | safe }}</p>
         <p>{{ achievement.start_date | markdown | safe }}</p>
