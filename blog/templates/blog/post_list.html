@@ -27,8 +27,8 @@
             {% endif %}
             <a href="{% url 'post_detail' pk=post.pk %}"><img src="{{ post.image.url }}" enctype="multipart/form-data" alt="Image" class="responsive"></a>
           <div class="carousel-caption">
-            <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
-            <p>published: {{ post.published_date }}</p>
+            <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3><p>published: {{ post.published_date }}</p></a>
+           
           </div>
             </div>
             {% endif %}

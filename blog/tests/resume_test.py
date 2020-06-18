@@ -25,6 +25,7 @@ def checkName():
         assert name == "Lauren Alie"
     except NoSuchElementException:
         print("failed to locate name on CV")
+        pass
 
 #User clicks LinkedIn link to navigate to blogger's profile
 def checkLink():
@@ -37,6 +38,7 @@ def checkLink():
         
     except NoSuchElementException:
         print("failed to located LinkedIn link")
+        pass
 
 #User checks CV has education, technology, other experience, volunteering,
 # extra curricular, activities and references sections
@@ -49,6 +51,7 @@ def checkCVSections():
             assert section.text in experiences
     except NoSuchElementException:
         print ("failed to locate titles of CV experiences")
+        pass
 
 #User clicks home page to navigate back to home
 def checkHome():
@@ -59,6 +62,7 @@ def checkHome():
         assert current == "https://laurenalie.pythonanywhere.com/"
     except NoSuchElementException:
         print("failed to navigate back to homepage") 
+        pass
 
 
 checkHeader()
