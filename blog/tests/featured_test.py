@@ -43,7 +43,7 @@ def checkCarouselMovement():
 #User wants to check out one of the featured posts so clicks on it to read more.
 
 def readFeatured():
-    #click on post
+    #Click on post
     try:
         image = browser.find_element_by_tag_name("img")
         browser.execute_script("arguments[0].click();", image)  
@@ -60,6 +60,7 @@ def readFeatured():
         assert current == "https://laurenalie.pythonanywhere.com/"
     except NoSuchElementException:
         print("failed to return to homepage")
+
 
    
 
